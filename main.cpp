@@ -1,7 +1,12 @@
 #include "DxLib.h"
+#include "Title.h"
+#include "Manual.h"
+#include "GameScene.h"
+#include "Clear.h"
+#include "GameOver.h"
 
 // ウィンドウのタイトルに表示する文字列
-const char TITLE[] = "xx2x_xx_ナマエ: タイトル";
+const char TITLE[] = "3245_四字熟GO";
 
 // ウィンドウ横幅
 const int WIN_WIDTH = 600;
