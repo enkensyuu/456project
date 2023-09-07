@@ -12,6 +12,9 @@ private:
 	//半径
 	int radius = 0;
 
+	//ずらす
+	int boxShift = 200;
+
 	// 左ボタンが押されてるフラグ
 	bool push_flag = false;
 
