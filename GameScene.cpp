@@ -59,23 +59,53 @@ void GameScene::Update() {
 					isSelectFlag[3] = 1;
 					push_flag = false;
 				}
-				else if (isSelectFlag[0] == 1 && isSelectFlag[1] == 1 && isSelectFlag[2] == 1 && isSelectFlag[3] == 1) {
-					isSelectFlag[0] = 0;
-					isSelectFlag[1] = 0;
-					isSelectFlag[2] = 0;
-					isSelectFlag[3] = 0;
-				}
 			}
 			else if (push_flag == true) {
 				push_flag = false;
-				height[0] = 800;
+				if (height[0] == 100 && width[0] <= 1200) {
+					height[0] = 800;
+					width[0] = 600;
+				}
+				else if (height[1] == 100 && width[1] <= 1200) {
+					height[1] = 800;
+					width[1] = 800;
+				}
+				else if (height[2] == 100 && width[2] <= 1200) {
+					height[2] = 800;
+					width[2] = 1000;
+				}
+				else if (height[3] == 100 && width[3] <= 1200) {
+					height[3] = 800;
+					width[3] = 1200;
+				}
+				/*if (isSelectFlag[0] == 1) {
+					height[i] = 800;
+					width[i] = 600;
+					isSelectFlag[0] = 0;
+				}
+				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 1) {
+					height[i] = 800;
+					width[i] = 800;
+					isSelectFlag[1] = 0;
+				}
+				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 0 && isSelectFlag[2] == 1) {
+					height[i] = 800;
+					width[i] = 1000;
+					isSelectFlag[2] = 0;
+				}
+				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 0 && isSelectFlag[2] == 0 && isSelectFlag[3] == 1) {
+					height[i] = 800;
+					width[i] = 1200;
+					isSelectFlag[3] = 0;
+				}*/
+				/*height[0] = 800;
 				height[1] = 800;
 				height[2] = 800;
 				height[3] = 800;
 				width[0] = 600;
 				width[1] = 800;
 				width[2] = 1000;
-				width[3] = 1200;
+				width[3] = 1200;*/
 				isSelectFlag[0] = 0;
 				isSelectFlag[1] = 0;
 				isSelectFlag[2] = 0;
