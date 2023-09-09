@@ -31,7 +31,7 @@ public:
 	/// <summary>
 	/// 初期化
 	/// </summary>
-	void Initialize();
+	void Initialize(int i);
 
 	/// <summary>
 	/// 更新
@@ -42,5 +42,10 @@ public:
 	/// 描画
 	/// </summary>
 	void Draw();
+
+	/// <summary>
+	/// マウスとボックスの当たり判定
+	/// </summary>
+	void Mouse_Collision();
 };
 

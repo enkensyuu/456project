@@ -124,3 +124,13 @@ void GameScene::Draw() {
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "isSelectFlag = %d", isSelectFlag);
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
 }
+
+void GameScene::Mouse_Collision(int i) {
+	for (int i = 0; i < 4; i++) {
+		((Mouse & MOUSE_INPUT_LEFT) &&
+		 (mouse_x < width[i] + radius &&
+		  mouse_x > width[i] - radius) &&
+		 (mouse_y < height[i] + radius &&
+		  mouse_y > height[i] - radius));
+	}
+}
