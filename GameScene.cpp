@@ -45,9 +45,9 @@ void GameScene::Update() {
 	for (int i = 0; i < 4; i++) {
 		if ((Mouse & MOUSE_INPUT_LEFT) &&
 			(mouse_x < selectWidth[i] + radius &&
-			 mouse_x > selectWidth[i] - radius) &&
+				mouse_x > selectWidth[i] - radius) &&
 			(mouse_y < selectHeight[i] + radius &&
-			 mouse_y > selectHeight[i] - radius)) {
+				mouse_y > selectHeight[i] - radius)) {
 			isBoxFlag[i] = 1;
 			if (isBoxFlag[i + 1] == 1 || isBoxFlag[i + 2] == 1 || isBoxFlag[i + 3] == 1 ||
 				isBoxFlag[i - 1] == 1 || isBoxFlag[i - 2] == 1 || isBoxFlag[i - 3] == 1) {
@@ -59,46 +59,24 @@ void GameScene::Update() {
 				isBoxFlag[i - 3] = 0;
 			}
 		}
-		if ((Mouse & MOUSE_INPUT_LEFT) &&
-			(mouse_x < width[i] + radius &&
-			 mouse_x > width[i] - radius) &&
-			(mouse_y < height[i] + radius &&
-			 mouse_y > height[i] - radius)) {
-			if (push_flag == false) {
-				if (isBoxFlag[0] == 1) {
-					if (isSelectFlag[0] == 0 && mouse_y >= 490) {
-						height[i] = 100;
-						width[i] = 600;
-						isSelectFlag[0] = 1;
-						push_flag = true;
+		if ((Mouse & MOUSE_INPUT_LEFT)) {
+			if (isBoxFlag[0] == 1) {
+				if (isSelectFlag[0] == 0 && mouse_y >= 490) {
+					if ((mouse_x < width[0] + radius &&
+						mouse_x > width[0] - radius) &&
+						(mouse_y < height[0] + radius &&
+							mouse_y > height[0] - radius))
+					{
+						height[0] = 100;
+						width[0] = 600;
 					}
-				}
-				else if (isBoxFlag[1] == 1) {
-					if (isSelectFlag[1] == 0 && mouse_y >= 490) {
-						height[i] = 100;
-						width[i] = 800;
-						isSelectFlag[1] = 1;
-						push_flag = true;
-					}
-				}
-				else if (isBoxFlag[2] == 1) {
-					if (isSelectFlag[2] == 0 && mouse_y >= 490) {
-						height[i] = 100;
-						width[i] = 1000;
-						isSelectFlag[2] = 1;
-						push_flag = true;
-					}
-				}
-				else if (isBoxFlag[3] == 1) {
-					if (isSelectFlag[3] == 0 && mouse_y >= 490) {
-						height[i] = 100;
-						width[i] = 1200;
-						isSelectFlag[3] = 1;
-						push_flag = true;
-					}
+					isSelectFlag[0] = 1;
+					isBoxFlag[0] = 0;
 				}
 			}
-			else if (push_flag == true) {
+		}
+			
+			/*else if (push_flag == true) {
 				push_flag = false;
 				height[0] = 800;
 				height[1] = 800;
@@ -113,44 +91,8 @@ void GameScene::Update() {
 				isSelectFlag[2] = 0;
 				isSelectFlag[3] = 0;
 
-				/*if (height[0] == 100 && width[0] <= 1200) {
-					height[0] = 800;
-					width[0] = 600;
-				}
-				else if (height[1] == 100 && width[1] <= 1200) {
-					height[1] = 800;
-					width[1] = 800;
-				}
-				else if (height[2] == 100 && width[2] <= 1200) {
-					height[2] = 800;
-					width[2] = 1000;
-				}
-				else if (height[3] == 100 && width[3] <= 1200) {
-					height[3] = 800;
-					width[3] = 1200;
-				}*/
-				/*if (isSelectFlag[0] == 1) {
-					height[i] = 800;
-					width[i] = 600;
-					isSelectFlag[0] = 0;
-				}
-				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 1) {
-					height[i] = 800;
-					width[i] = 800;
-					isSelectFlag[1] = 0;
-				}
-				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 0 && isSelectFlag[2] == 1) {
-					height[i] = 800;
-					width[i] = 1000;
-					isSelectFlag[2] = 0;
-				}
-				else if (isSelectFlag[0] == 0 && isSelectFlag[1] == 0 && isSelectFlag[2] == 0 && isSelectFlag[3] == 1) {
-					height[i] = 800;
-					width[i] = 1200;
-					isSelectFlag[3] = 0;
-				}*/
-			}
-		}
+				
+		}*/
 	}
 }
 
@@ -174,4 +116,8 @@ void GameScene::Draw() {
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "isBoxFlag[0] = %d", isBoxFlag[0]);
 	DrawFormatString(0, 30, GetColor(255, 255, 255), "isBoxFlag[1] = %d", isBoxFlag[1]);
+	DrawFormatString(0, 60, GetColor(255, 255, 255), "isBoxFlag[2] = %d", isBoxFlag[2]);
+	DrawFormatString(0, 90, GetColor(255, 255, 255), "isBoxFlag[3] = %d", isBoxFlag[3]);
+	DrawFormatString(0, 120, GetColor(255, 255, 255), "mouse_x = %d", mouse_x);
+	DrawFormatString(0, 150, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
 }
