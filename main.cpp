@@ -4,15 +4,16 @@
 #include "GameScene.h"
 #include "Clear.h"
 #include "GameOver.h"
+#include "SceneManager.h"
 
 // ウィンドウのタイトルに表示する文字列
 const char TITLE[] = "3245_四字熟GO";
 
 // ウィンドウ横幅
-const int WIN_WIDTH = 600;
+const int WIN_WIDTH = 1920;
 
 // ウィンドウ縦幅
-const int WIN_HEIGHT = 400;
+const int WIN_HEIGHT = 980;
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine,
                    _In_ int nCmdShow) {
@@ -46,6 +47,25 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	// ゲームループで使う変数の宣言
 
+	//シーンの初期化
+	SceneManager scene = SceneManager::TITLE;
+
+	//タイトルの初期化
+	Title* title = new Title();
+	title->Intialize();
+
+	//マニュアルの初期化
+	Manual* manual = new Manual();
+	manual->Intialize();
+
+	//クリア画面の初期化
+	Clear* clear = new Clear();
+	clear->Intialize();
+
+	//ゲームオーバー画面の初期化
+	GameOver* gameOver = new GameOver();
+	gameOver->Intialize();
+
 
 	// 最新のキーボード情報用
 	char keys[256] = {0};
@@ -56,6 +76,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	// ゲームループ
 	while (true) {
 		// 最新のキーボード情報だったものは1フレーム前のキーボード情報として保存
+		for (int i = 0; i < 256; i++)
+		{
+			oldkeys[i] = keys[i];
+		}
 		// 最新のキーボード情報を取得
 		GetHitKeyStateAll(keys);
 
@@ -65,8 +89,85 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 		// 更新処理
 
+		//ゲームのシーン遷移
+		switch (scene)
+		{
+			case SceneManager::TITLE:
+			
+				//タイトルシーンの更新処理
+				title->Update(keys, oldkeys);
+
+				break;
+
+			case SceneManager::MANUAL:
+
+				//マニュアルシーンの更新処理
+				manual->Update(keys, oldkeys);
+
+				break;
+
+			case SceneManager::GAMESCENE:
+
+				//ゲームシーンの更新処理
+
+				break;
+
+			case SceneManager::CLEAR:
+
+				//クリアシーンの更新処理
+				clear->Update(keys, oldkeys);
+
+				break;
+
+			case SceneManager::GAMEOVER:
+
+				//ゲームオーバーシーンの更新処理
+				gameOver->Update(keys, oldkeys);
+
+				break;
+		}
 
 		// 描画処理
+
+		//各シーンの描画
+		switch (scene)
+		{
+			case SceneManager::TITLE:
+
+				//タイトルシーンの描画処理
+				title->Draw();
+
+				break;
+
+			case SceneManager::MANUAL:
+
+				//マニュアルシーンの描画処理
+				manual->Draw();
+
+				break;
+
+			case SceneManager::GAMESCENE:
+
+				//ゲームシーンの描画処理
+
+				break;
+
+			case SceneManager::CLEAR:
+
+				//クリアシーンの描画処理
+				clear->Draw();
+
+				break;
+
+			case SceneManager::GAMEOVER:
+
+				//ゲームオーバーシーンの描画処理
+				gameOver->Draw();
+
+				break;
+		}
+
+		DrawFormatString(1280, 500, GetColor(255, 255, 255), "scene %d", scene);
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面
@@ -85,6 +186,13 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 			break;
 		}
 	}
+
+	//各シーンの解放
+	delete title;
+	delete manual;
+	delete clear;
+	delete gameOver;
+
 	// Dxライブラリ終了処理
 	DxLib_End();
 
