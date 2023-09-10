@@ -9,16 +9,22 @@ private:
 	int height[4];
 	//横
 	int width[4];
+
+	//選ぶ箱X
+	int selectHeight[4];
+	//選ぶ箱Y
+	int selectWidth[4];
 	//半径
 	int radius = 0;
-	//ずらす
-	int boxShift = 0;
 
 	//どこに当てはめるか
 	int isSelectFlag[4];
 
 	// 左ボタンが押されてるフラグ
 	bool push_flag = false;
+
+	//ボックスが指定されているか
+	int isBoxFlag[4];
 
 	//マウスのX軸、Y軸
 	int mouse_x, mouse_y;
