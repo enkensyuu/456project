@@ -6,13 +6,12 @@ class GameScene
 private:
 
 	//‚‚³
-	int height[4];
+	int height[8];
 	//‰¡
-	int width[4];
+	int width[8];
 	//”¼Œa
 	int radius = 0;
 	//‚¸‚ç‚·
-	int boxShift = 0;
 
 	//‚Ç‚±‚É“–‚Ä‚Í‚ß‚é‚©
 	int isSelectFlag[4];
@@ -31,7 +30,7 @@ public:
 	/// <summary>
 	/// ‰Šú‰»
 	/// </summary>
-	void Initialize(int i);
+	void Initialize();
 
 	/// <summary>
 	/// XV
