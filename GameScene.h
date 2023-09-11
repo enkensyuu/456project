@@ -10,6 +10,9 @@ private:
 	//‰¡
 	int width[8];
 
+	//Š¿Žš‚Ì•\Ž¦
+	int image[8];
+
 	//‘I‚Ô” X
 	int selectHeight[4];
 	//‘I‚Ô” Y

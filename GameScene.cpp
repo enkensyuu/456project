@@ -40,6 +40,8 @@ void GameScene::Initialize() {
 	isBoxFlag[1] = 0;
 	isBoxFlag[2] = 0;
 	isBoxFlag[3] = 0;
+
+	LoadDivGraph("Resources/No1.png", 8, 8, 1, 100, 100, image);
 }
 
 void GameScene::Update() {
@@ -590,7 +592,7 @@ void GameScene::Update() {
 					else if (isSelectFlag[3] == 1) {
 
 						height[2] = 700;
-						width[2] = 1200;
+						width[2] = 1000;
 						isSelectFlag[3] = 0;
 						isBoxFlag[3] = 0;
 					}
@@ -697,14 +699,14 @@ void GameScene::Update() {
 }
 
 void GameScene::Draw() {
-	DrawBox(width[0] - radius, height[0] - radius, width[0] + radius, height[0] + radius, GetColor(0, 255, 255), true);
-	DrawBox(width[1] - radius, height[1] - radius, width[1] + radius, height[1] + radius, GetColor(255, 0, 255), true);
-	DrawBox(width[2] - radius, height[2] - radius, width[2] + radius, height[2] + radius, GetColor(255, 255, 0), true);
-	DrawBox(width[3] - radius, height[3] - radius, width[3] + radius, height[3] + radius, GetColor(255, 0, 0), true);
-	DrawBox(width[4] - radius, height[4] - radius, width[4] + radius, height[4] + radius, GetColor(0, 255, 0), true);
-	DrawBox(width[5] - radius, height[5] - radius, width[5] + radius, height[5] + radius, GetColor(0, 0, 255), true);
-	DrawBox(width[6] - radius, height[6] - radius, width[6] + radius, height[6] + radius, GetColor(155, 155, 155), true);
-	DrawBox(width[7] - radius, height[7] - radius, width[7] + radius, height[7] + radius, GetColor(55, 55, 55), true);
+	DrawGraph(width[0] - radius, height[0] - radius,image[0],true);
+	DrawGraph(width[1] - radius, height[1] - radius,image[6],true);
+	DrawGraph(width[2] - radius, height[2] - radius,image[1],true);
+	DrawGraph(width[3] - radius, height[3] - radius,image[3],true);
+	DrawGraph(width[4] - radius, height[4] - radius,image[5],true);
+	DrawGraph(width[5] - radius, height[5] - radius,image[4],true);
+	DrawGraph(width[6] - radius, height[6] - radius,image[7],true);
+	DrawGraph(width[7] - radius, height[7] - radius,image[2],true);
 
 	DrawBox(selectWidth[0] - radius, selectHeight[0] - radius, selectWidth[0] + radius, selectHeight[0] + radius, GetColor(0, 255, 255), false);
 	DrawBox(selectWidth[1] - radius, selectHeight[1] - radius, selectWidth[1] + radius, selectHeight[1] + radius, GetColor(255, 0, 255), false);
@@ -718,10 +720,10 @@ void GameScene::Draw() {
 
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "isSelectFlag = %d", isSelectFlag);
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "isBoxFlag[0] = %d", height[0]);
-	DrawFormatString(0, 30, GetColor(255, 255, 255), "isBoxFlag[1] = %d", width[0]);
-	DrawFormatString(0, 60, GetColor(255, 255, 255), "isBoxFlag[2] = %d", isBoxFlag[2]);
-	DrawFormatString(0, 90, GetColor(255, 255, 255), "isBoxFlag[3] = %d", isBoxFlag[3]);
-	DrawFormatString(0, 120, GetColor(255, 255, 255), "mouse_x = %d", mouse_x);
-	DrawFormatString(0, 150, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "isBoxFlag[0] = %d", height[0]);
+	//DrawFormatString(0, 30, GetColor(255, 255, 255), "isBoxFlag[1] = %d", width[0]);
+	//DrawFormatString(0, 60, GetColor(255, 255, 255), "isBoxFlag[2] = %d", isBoxFlag[2]);
+	//DrawFormatString(0, 90, GetColor(255, 255, 255), "isBoxFlag[3] = %d", isBoxFlag[3]);
+	//DrawFormatString(0, 120, GetColor(255, 255, 255), "mouse_x = %d", mouse_x);
+	//DrawFormatString(0, 150, GetColor(255, 255, 255), "mouse_y = %d", mouse_y);
 }
