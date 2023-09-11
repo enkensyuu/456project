@@ -65,12 +65,13 @@ void GameScene::Update() {
 			(mouse_y < height[i] + radius &&
 			 mouse_y > height[i] - radius)) {
 			if (push_flag == false) {
+				push_flag = true;
 				if (isBoxFlag[0] == 1) {
 					if (isSelectFlag[0] == 0 && mouse_y >= 490) {
 						height[i] = 100;
 						width[i] = 600;
 						isSelectFlag[0] = 1;
-						push_flag = true;
+						//push_flag = true;
 					}
 				}
 				else if (isBoxFlag[1] == 1) {
@@ -78,7 +79,7 @@ void GameScene::Update() {
 						height[i] = 100;
 						width[i] = 800;
 						isSelectFlag[1] = 1;
-						push_flag = true;
+						//push_flag = true;
 					}
 				}
 				else if (isBoxFlag[2] == 1) {
@@ -86,7 +87,7 @@ void GameScene::Update() {
 						height[i] = 100;
 						width[i] = 1000;
 						isSelectFlag[2] = 1;
-						push_flag = true;
+						//push_flag = true;
 					}
 				}
 				else if (isBoxFlag[3] == 1) {
@@ -94,9 +95,10 @@ void GameScene::Update() {
 						height[i] = 100;
 						width[i] = 1200;
 						isSelectFlag[3] = 1;
-						push_flag = true;
+						//push_flag = true;
 					}
 				}
+			
 			}
 			else if (push_flag == true) {
 				push_flag = false;
