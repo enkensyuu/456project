@@ -4,6 +4,10 @@
 #include "GameScene.h"
 #include "Clear.h"
 #include "GameOver.h"
+#include "GameScene_2.h"
+#include "GameScene_3.h"
+#include "GameScene_4.h"
+#include "GameScene_5.h"
 
 // ウィンドウのタイトルに表示する文字列
 const char TITLE[] = "3245_四字熟GO";
@@ -46,7 +50,16 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	// ゲームループで使う変数の宣言
 	GameScene* gameScene = new GameScene;
-	gameScene->Initialize();
+	GameScene_2* gameScene_2 = new GameScene_2;
+	GameScene_3* gameScene_3 = new GameScene_3;
+	GameScene_4* gameScene_4 = new GameScene_4;
+	GameScene_5* gameScene_5 = new GameScene_5;
+
+	//gameScene->Initialize();
+	//gameScene_2->Initialize();
+	//gameScene_3->Initialize();
+	//gameScene_4->Initialize();
+	gameScene_5->Initialize();
 
 	// 最新のキーボード情報用
 	char keys[256] = {0};
@@ -65,10 +78,18 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//---------  ここからプログラムを記述  ----------//
 
 		// 更新処理
-		gameScene->Update();
+		//gameScene->Update();
+		//gameScene_2->Update();
+		//gameScene_3->Update();
+		//gameScene_4->Update();
+		gameScene_5->Update();
 
 		// 描画処理
-		gameScene->Draw();
+		//gameScene->Draw();
+		//gameScene_2->Draw();
+		//gameScene_3->Draw();
+		//gameScene_4->Draw();
+		gameScene_5->Draw();
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面

@@ -136,6 +136,10 @@
     <ClCompile Include="Clear.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameScene_2.cpp" />
+    <ClCompile Include="GameScene_3.cpp" />
+    <ClCompile Include="GameScene_4.cpp" />
+    <ClCompile Include="GameScene_5.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manual.cpp" />
     <ClCompile Include="Title.cpp" />
@@ -144,6 +148,10 @@
     <ClInclude Include="Clear.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameScene_2.h" />
+    <ClInclude Include="GameScene_3.h" />
+    <ClInclude Include="GameScene_4.h" />
+    <ClInclude Include="GameScene_5.h" />
     <ClInclude Include="Manual.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>

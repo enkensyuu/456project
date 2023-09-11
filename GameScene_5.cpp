@@ -1,7 +1,7 @@
-#include "GameScene.h"
+#include "GameScene_5.h"
 #include "DxLib.h"
 
-void GameScene::Initialize() {
+void GameScene_5::Initialize() {
 
 	height[0] = 700;
 	height[1] = 700;
@@ -41,11 +41,11 @@ void GameScene::Initialize() {
 	isBoxFlag[2] = 0;
 	isBoxFlag[3] = 0;
 
-	LoadDivGraph("Resources/No1.png", 8, 8, 1, 100, 100, image);
+	LoadDivGraph("Resources/No5.png", 8, 8, 1, 100, 100, image);
 
 }
 
-void GameScene::Update() {
+void GameScene_5::Update() {
 
 	// カーソル座標取得
 	GetMousePoint(&mouse_x, &mouse_y);
@@ -700,7 +700,7 @@ void GameScene::Update() {
 	}
 }
 
-void GameScene::Draw() {
+void GameScene_5::Draw() {
 
 	DrawGraph(width[0] - radius, height[0] - radius, image[0], true);
 	DrawGraph(width[1] - radius, height[1] - radius, image[6], true);
