@@ -6,9 +6,9 @@ class GameScene
 private:
 
 	//‚‚³
-	int height[4];
+	int height[8];
 	//‰¡
-	int width[4];
+	int width[8];
 
 	//‘I‚Ô” X
 	int selectHeight[4];
