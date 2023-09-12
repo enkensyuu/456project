@@ -703,13 +703,13 @@ void GameScene_5::Update() {
 void GameScene_5::Draw() {
 
 	DrawGraph(width[0] - radius, height[0] - radius, image[0], true);
-	DrawGraph(width[1] - radius, height[1] - radius, image[6], true);
+	DrawGraph(width[1] - radius, height[1] - radius, image[7], true);
 	DrawGraph(width[2] - radius, height[2] - radius, image[1], true);
-	DrawGraph(width[3] - radius, height[3] - radius, image[3], true);
-	DrawGraph(width[4] - radius, height[4] - radius, image[5], true);
-	DrawGraph(width[5] - radius, height[5] - radius, image[4], true);
-	DrawGraph(width[6] - radius, height[6] - radius, image[7], true);
-	DrawGraph(width[7] - radius, height[7] - radius, image[2], true);
+	DrawGraph(width[3] - radius, height[3] - radius, image[6], true);
+	DrawGraph(width[4] - radius, height[4] - radius, image[2], true);
+	DrawGraph(width[5] - radius, height[5] - radius, image[5], true);
+	DrawGraph(width[6] - radius, height[6] - radius, image[3], true);
+	DrawGraph(width[7] - radius, height[7] - radius, image[4], true);
 
 
 	DrawBox(selectWidth[0] - radius, selectHeight[0] - radius, selectWidth[0] + radius, selectHeight[0] + radius, GetColor(0, 255, 255), false);

@@ -55,11 +55,11 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	GameScene_4* gameScene_4 = new GameScene_4;
 	GameScene_5* gameScene_5 = new GameScene_5;
 
-	//gameScene->Initialize();
+	gameScene->Initialize();
 	//gameScene_2->Initialize();
 	//gameScene_3->Initialize();
 	//gameScene_4->Initialize();
-	gameScene_5->Initialize();
+	//gameScene_5->Initialize();
 
 	// 最新のキーボード情報用
 	char keys[256] = {0};
@@ -78,18 +78,18 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//---------  ここからプログラムを記述  ----------//
 
 		// 更新処理
-		//gameScene->Update();
+		gameScene->Update();
 		//gameScene_2->Update();
 		//gameScene_3->Update();
 		//gameScene_4->Update();
-		gameScene_5->Update();
+		//gameScene_5->Update();
 
 		// 描画処理
-		//gameScene->Draw();
+		gameScene->Draw();
 		//gameScene_2->Draw();
 		//gameScene_3->Draw();
 		//gameScene_4->Draw();
-		gameScene_5->Draw();
+		//gameScene_5->Draw();
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面
@@ -112,6 +112,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	DxLib_End();
 
 	delete gameScene;
+	delete gameScene_2;
+	delete gameScene_3;
+	delete gameScene_4;
+	delete gameScene_5;
 
 	// 正常終了
 	return 0;
