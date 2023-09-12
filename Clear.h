@@ -30,5 +30,8 @@ public:		//メンバ関数
 
 	//描画
 	void Draw();
+
+	//次のシーンのゲッター
+	SceneManager GetNextScene() { return nextScene; }
 };
 

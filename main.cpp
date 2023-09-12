@@ -97,12 +97,24 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 				//タイトルシーンの更新処理
 				title->Update(keys, oldkeys);
 
+				//シーンの切り替え
+				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+				{
+					scene = title->GetNextScene();
+				}
+
 				break;
 
 			case SceneManager::MANUAL:
 
 				//マニュアルシーンの更新処理
 				manual->Update(keys, oldkeys);
+
+				//シーンの切り替え
+				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+				{
+					scene = manual->GetNextScene();
+				}
 
 				break;
 
@@ -117,12 +129,24 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 				//クリアシーンの更新処理
 				clear->Update(keys, oldkeys);
 
+				//シーンの切り替え
+				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+				{
+					scene = clear->GetNextScene();
+				}
+
 				break;
 
 			case SceneManager::GAMEOVER:
 
 				//ゲームオーバーシーンの更新処理
 				gameOver->Update(keys, oldkeys);
+
+				//シーンの切り替え
+				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+				{
+					scene = gameOver->GetNextScene();
+				}
 
 				break;
 		}

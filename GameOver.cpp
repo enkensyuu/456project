@@ -24,11 +24,7 @@ void GameOver::Intialize()
 
 void GameOver::Update(char* keys, char* oldkeys)
 {
-	//ƒV[ƒ“‚ÌØ‚è‘Ö‚¦
-	if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-	{
-		scene = nextScene;
-	}
+	
 }
 
 void GameOver::Draw()
