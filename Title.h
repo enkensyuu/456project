@@ -8,9 +8,6 @@ private:	//メンバ変数
 	//タイトルハンドル
 	int titleHandle = 0;
 
-	//現在のシーン
-	SceneManager scene = SceneManager::TITLE;
-
 	//次のシーン
 	SceneManager nextScene = SceneManager::MANUAL;
 

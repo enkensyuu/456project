@@ -20,7 +20,7 @@ const int WIN_WIDTH = 1920;
 const int WIN_HEIGHT = 980;
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine,
-                   _In_ int nCmdShow) {
+	_In_ int nCmdShow) {
 	// ウィンドウモードに設定
 	ChangeWindowMode(TRUE);
 
@@ -57,7 +57,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	GameScene_5* gameScene_5 = new GameScene_5;
 
 	gameScene->Initialize();
-	//gameScene_2->Initialize();
+	gameScene_2->Initialize();
 	//gameScene_3->Initialize();
 	//gameScene_4->Initialize();
 	//gameScene_5->Initialize();
@@ -82,10 +82,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 
 	// 最新のキーボード情報用
-	char keys[256] = {0};
+	char keys[256] = { 0 };
 
 	// 1ループ(フレーム)前のキーボード情報
-	char oldkeys[256] = {0};
+	char oldkeys[256] = { 0 };
 
 	// ゲームループ
 	while (true) {
@@ -106,73 +106,97 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//ゲームのシーン遷移
 		switch (scene)
 		{
-			case SceneManager::TITLE:
-			
-				//タイトルシーンの更新処理
-				title->Update(keys, oldkeys);
+		case SceneManager::TITLE:
 
-				//シーンの切り替え
-				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-				{
-					scene = title->GetNextScene();
-				}
+			//タイトルシーンの更新処理
+			title->Update(keys, oldkeys);
 
-				break;
+			//シーンの切り替え
+			if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+			{
+				scene = title->GetNextScene();
+			}
 
-			case SceneManager::MANUAL:
+			break;
 
-				//マニュアルシーンの更新処理
-				manual->Update(keys, oldkeys);
+		case SceneManager::MANUAL:
 
-				//シーンの切り替え
-				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-				{
-					scene = manual->GetNextScene();
-				}
+			//マニュアルシーンの更新処理
+			manual->Update(keys, oldkeys);
 
-				break;
+			//シーンの切り替え
+			if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+			{
+				scene = manual->GetNextScene();
+			}
 
-			case SceneManager::GAMESCENE:
+			break;
 
-				//ゲームシーンの更新処理
+		case SceneManager::STAGE1:
 
-				break;
+			//ゲームシーンの更新処理
+			gameScene->Update();
 
-			case SceneManager::CLEAR:
+			scene = gameScene->GetNextScene();
 
-				//クリアシーンの更新処理
-				clear->Update(keys, oldkeys);
+			break;
 
-				//シーンの切り替え
-				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-				{
-					scene = clear->GetNextScene();
-				}
+		case SceneManager::STAGE2:
 
-				break;
+			//ゲームシーンの更新処理
+			gameScene_2->Update();
 
-			case SceneManager::GAMEOVER:
+			break;
 
-				//ゲームオーバーシーンの更新処理
-				gameOver->Update(keys, oldkeys);
+		case SceneManager::STAGE3:
 
-				//シーンの切り替え
-				if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-				{
-					scene = gameOver->GetNextScene();
-				}
-		gameScene->Update();
-		//gameScene_2->Update();
-		//gameScene_3->Update();
-		//gameScene_4->Update();
-		//gameScene_5->Update();
+			//ゲームシーンの更新処理
+			gameScene_3->Update();
 
-				break;
+			break;
+
+		case SceneManager::STAGE4:
+
+			//ゲームシーンの更新処理
+			gameScene_4->Update();
+
+			break;
+
+		case SceneManager::STAGE5:
+
+			//ゲームシーンの更新処理
+			gameScene_5->Update();
+
+			break;
+
+		case SceneManager::CLEAR:
+
+			//クリアシーンの更新処理
+			clear->Update(keys, oldkeys);
+
+			//シーンの切り替え
+			if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+			{
+				scene = clear->GetNextScene();
+			}
+
+			break;
+
+		case SceneManager::GAMEOVER:
+
+			//ゲームオーバーシーンの更新処理
+			gameOver->Update(keys, oldkeys);
+
+			//シーンの切り替え
+			if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
+			{
+				scene = gameOver->GetNextScene();
+			}
+
+			break;
 		}
 
 		// 描画処理
-		gameScene->Draw();
-		//gameScene_2->Draw();
 		//gameScene_3->Draw();
 		//gameScene_4->Draw();
 		//gameScene_5->Draw();
@@ -180,39 +204,47 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//各シーンの描画
 		switch (scene)
 		{
-			case SceneManager::TITLE:
+		case SceneManager::TITLE:
 
-				//タイトルシーンの描画処理
-				title->Draw();
+			//タイトルシーンの描画処理
+			title->Draw();
 
-				break;
+			break;
 
-			case SceneManager::MANUAL:
+		case SceneManager::MANUAL:
 
-				//マニュアルシーンの描画処理
-				manual->Draw();
+			//マニュアルシーンの描画処理
+			manual->Draw();
 
-				break;
+			break;
 
-			case SceneManager::GAMESCENE:
+		case SceneManager::STAGE1:
 
-				//ゲームシーンの描画処理
+			//ゲームシーンの描画処理
+			gameScene->Draw();
 
-				break;
+			break;
 
-			case SceneManager::CLEAR:
+		case SceneManager::STAGE2:
 
-				//クリアシーンの描画処理
-				clear->Draw();
+			//ゲームシーンの描画処理
+			gameScene_2->Draw();
 
-				break;
+			break;
 
-			case SceneManager::GAMEOVER:
+		case SceneManager::CLEAR:
 
-				//ゲームオーバーシーンの描画処理
-				gameOver->Draw();
+			//クリアシーンの描画処理
+			clear->Draw();
 
-				break;
+			break;
+
+		case SceneManager::GAMEOVER:
+
+			//ゲームオーバーシーンの描画処理
+			gameOver->Draw();
+
+			break;
 		}
 
 		DrawFormatString(1280, 500, GetColor(255, 255, 255), "scene %d", scene);

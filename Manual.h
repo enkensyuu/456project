@@ -8,11 +8,8 @@ private:	//メンバ変数
 	//マニュアルハンドル
 	int manualHandle = 0;
 
-	//現在のシーン
-	SceneManager scene = SceneManager::MANUAL;
-
 	//次のシーン
-	SceneManager nextScene = SceneManager::GAMESCENE;
+	SceneManager nextScene = SceneManager::STAGE1;
 
 public:		//メンバ関数
 

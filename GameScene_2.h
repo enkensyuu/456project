@@ -1,5 +1,6 @@
 #pragma once
 #include "Dxlib.h"
+#include "SceneManager.h"
 
 class GameScene_2 {
 private:
@@ -34,6 +35,13 @@ private:
 	//マウスの取得
 	int Mouse;
 
+	bool isClear1_;
+	bool isClear2_;
+	bool isClear3_;
+	bool isClear4_;
+
+	SceneManager nextScene;
+
 public:
 
 	/// <summary>
@@ -50,5 +58,8 @@ public:
 	/// 描画
 	/// </summary>
 	void Draw();
+
+	//次のシーンのゲッター
+	SceneManager GetNextScene() { return nextScene; }
 };
 
