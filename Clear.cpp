@@ -13,7 +13,7 @@ Clear::~Clear()
 void Clear::Intialize()
 {
 	//クリア画面の画像のロード
-	clearHandle = LoadGraph("Resources/clear.png");
+	clearHandle = LoadGraph("Resources/gameClear.png");
 
 	//シーンの初期化
 	scene = SceneManager::CLEAR;
