@@ -12,7 +12,7 @@
 #include "Space.h"
 
 // ウィンドウのタイトルに表示する文字列
-const char TITLE[] = "3245_四字熟GO";
+const char TITLE[] = "3045_四字熟GO";
 
 // ウィンドウ横幅
 const int WIN_WIDTH = 1920;
