@@ -8,6 +8,8 @@
 #include "GameScene_4.h"
 #include "GameScene_5.h"
 #include "SceneManager.h"
+#include "backGround.h"
+#include "Space.h"
 
 // ウィンドウのタイトルに表示する文字列
 const char TITLE[] = "3245_四字熟GO";
@@ -60,6 +62,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	gameScene_3->Initialize();
 	gameScene_4->Initialize();
 	gameScene_5->Initialize();
+
 	//シーンの初期化
 	SceneManager scene = SceneManager::TITLE;
 
@@ -74,6 +77,14 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	//クリア画面の初期化
 	Clear* clear = new Clear();
 	clear->Intialize();
+
+	//背景画面の初期化
+	BackGround* backGround = new BackGround();
+	backGround->Initialize();
+
+	//SPACEボタンの初期化
+	Space* space = new Space();
+	space->Initialize();
 
 	int bgmHandle = LoadSoundMem("Resources/yuruyakanakaze.mp3");
 
@@ -205,6 +216,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 			//タイトルシーンの描画処理
 			title->Draw();
+			space->Draw();
 
 			break;
 
@@ -212,19 +224,21 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 			//マニュアルシーンの描画処理
 			manual->Draw();
+			space->Draw();
 
 			break;
 
 		case SceneManager::STAGE1:
 
 			//ゲームシーンの描画処理
+			backGround->Draw();
 			gameScene->Draw();
-
 			break;
 
 		case SceneManager::STAGE2:
 
 			//ゲームシーンの描画処理
+			backGround->Draw();
 			gameScene_2->Draw();
 
 			break;
@@ -232,6 +246,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		case SceneManager::STAGE3:
 
 			//ゲームシーンの描画処理
+			backGround->Draw();
 			gameScene_3->Draw();
 
 			break;
@@ -239,6 +254,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		case SceneManager::STAGE4:
 
 			//ゲームシーンの描画処理
+			backGround->Draw();
 			gameScene_4->Draw();
 
 			break;
@@ -246,6 +262,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		case SceneManager::STAGE5:
 
 			//ゲームシーンの描画処理
+			backGround->Draw();
 			gameScene_5->Draw();
 
 			break;
@@ -254,6 +271,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 			//クリアシーンの描画処理
 			clear->Draw();
+			space->Draw();
 
 			break;
 		}
@@ -279,6 +297,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	delete title;
 	delete manual;
 	delete clear;
+	delete backGround;
 
 	// Dxライブラリ終了処理
 	DxLib_End();

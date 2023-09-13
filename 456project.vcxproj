@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Clear.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameScene_2.cpp" />
@@ -141,9 +142,11 @@
     <ClCompile Include="GameScene_5.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manual.cpp" />
+    <ClCompile Include="Space.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Clear.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameScene_2.h" />
@@ -152,6 +155,7 @@
     <ClInclude Include="GameScene_5.h" />
     <ClInclude Include="Manual.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Space.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

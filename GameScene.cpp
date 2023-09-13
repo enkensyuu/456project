@@ -689,6 +689,8 @@ void GameScene::Update() {
 
 void GameScene::Draw() {
 
+	
+
 	DrawGraph(width[0] - radius, height[0] - radius, image[7], true);
 	DrawGraph(width[1] - radius, height[1] - radius, image[2], true);
 	DrawGraph(width[2] - radius, height[2] - radius, image[1], true);
