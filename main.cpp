@@ -104,6 +104,12 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		{
 		case SceneManager::TITLE:
 
+			gameScene->Initialize();
+			gameScene_2->Initialize();
+			gameScene_3->Initialize();
+			gameScene_4->Initialize();
+			gameScene_5->Initialize();
+
 			PlaySoundMem(bgmHandle, DX_PLAYTYPE_BACK, false);
 
 			ChangeVolumeSoundMem(128, bgmHandle);
