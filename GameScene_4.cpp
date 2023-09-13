@@ -48,6 +48,8 @@ void GameScene_4::Initialize() {
 
 	LoadDivGraph("Resources/No4.png", 8, 8, 1, 100, 100, image);
 
+	explanation = LoadGraph("Resources/No4explanation.png");
+
 	nextScene = SceneManager::STAGE4;
 
 }
@@ -688,6 +690,8 @@ void GameScene_4::Update() {
 }
 
 void GameScene_4::Draw() {
+
+	DrawGraph(360, 380, explanation, true);
 
 	DrawGraph(width[0] - radius, height[0] - radius, image[1], true);
 	DrawGraph(width[1] - radius, height[1] - radius, image[3], true);

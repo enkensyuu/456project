@@ -48,6 +48,8 @@ void GameScene_3::Initialize() {
 
 	LoadDivGraph("Resources/No3.png", 8, 8, 1, 100, 100, image);
 
+	explanation = LoadGraph("Resources/No3explanation.png");
+
 	nextScene = SceneManager::STAGE3;
 
 }
@@ -688,6 +690,8 @@ void GameScene_3::Update() {
 }
 
 void GameScene_3::Draw() {
+
+	DrawGraph(380, 380, explanation, true);
 
 	DrawGraph(width[0] - radius, height[0] - radius, image[5], true);
 	DrawGraph(width[1] - radius, height[1] - radius, image[2], true);

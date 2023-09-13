@@ -41,6 +41,9 @@ private:
 	bool isClear3_;
 	bool isClear4_;
 
+	//ê‡ñæï∂
+	int explanation = 0;
+
 	SceneManager nextScene;
 
 public:
