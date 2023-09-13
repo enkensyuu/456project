@@ -75,6 +75,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	Clear* clear = new Clear();
 	clear->Intialize();
 
+	int bgmHandle = LoadSoundMem("Resources/yuruyakanakaze.mp3");
 
 	// 最新のキーボード情報用
 	char keys[256] = { 0 };
@@ -103,6 +104,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		{
 		case SceneManager::TITLE:
 
+			PlaySoundMem(bgmHandle, DX_PLAYTYPE_BACK, false);
+
+			ChangeVolumeSoundMem(128, bgmHandle);
+			
 			//タイトルシーンの更新処理
 			title->Update(keys, oldkeys);
 
@@ -141,7 +146,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 			//ゲームシーンの更新処理
 			gameScene_2->Update();
 
-			scene= gameScene_2->GetNextScene();
+			scene = gameScene_2->GetNextScene();
 
 			break;
 
@@ -246,9 +251,6 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 			break;
 		}
-
-		DrawFormatString(1280, 500, GetColor(255, 255, 255), "scene %d", scene);
-
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面
 		ScreenFlip();
