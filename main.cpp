@@ -80,6 +80,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	GameOver* gameOver = new GameOver();
 	gameOver->Intialize();
 
+	
 
 	// 最新のキーボード情報用
 	char keys[256] = {0};
