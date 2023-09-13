@@ -3,7 +3,6 @@
 #include "Manual.h"
 #include "GameScene.h"
 #include "Clear.h"
-#include "GameOver.h"
 #include "GameScene_2.h"
 #include "GameScene_3.h"
 #include "GameScene_4.h"
@@ -58,9 +57,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	gameScene->Initialize();
 	gameScene_2->Initialize();
-	//gameScene_3->Initialize();
-	//gameScene_4->Initialize();
-	//gameScene_5->Initialize();
+	gameScene_3->Initialize();
+	gameScene_4->Initialize();
+	gameScene_5->Initialize();
 	//シーンの初期化
 	SceneManager scene = SceneManager::TITLE;
 
@@ -75,10 +74,6 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	//クリア画面の初期化
 	Clear* clear = new Clear();
 	clear->Intialize();
-
-	//ゲームオーバー画面の初期化
-	GameOver* gameOver = new GameOver();
-	gameOver->Intialize();
 
 
 	// 最新のキーボード情報用
@@ -146,12 +141,16 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 			//ゲームシーンの更新処理
 			gameScene_2->Update();
 
+			scene= gameScene_2->GetNextScene();
+
 			break;
 
 		case SceneManager::STAGE3:
 
 			//ゲームシーンの更新処理
 			gameScene_3->Update();
+
+			scene = gameScene_3->GetNextScene();
 
 			break;
 
@@ -160,12 +159,16 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 			//ゲームシーンの更新処理
 			gameScene_4->Update();
 
+			scene = gameScene_4->GetNextScene();
+
 			break;
 
 		case SceneManager::STAGE5:
 
 			//ゲームシーンの更新処理
 			gameScene_5->Update();
+
+			scene = gameScene_5->GetNextScene();
 
 			break;
 
@@ -181,26 +184,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 			}
 
 			break;
-
-		case SceneManager::GAMEOVER:
-
-			//ゲームオーバーシーンの更新処理
-			gameOver->Update(keys, oldkeys);
-
-			//シーンの切り替え
-			if (keys[KEY_INPUT_SPACE] == 1 && oldkeys[KEY_INPUT_SPACE] == 0)
-			{
-				scene = gameOver->GetNextScene();
-			}
-
-			break;
 		}
 
 		// 描画処理
-		//gameScene_3->Draw();
-		//gameScene_4->Draw();
-		//gameScene_5->Draw();
-
 		//各シーンの描画
 		switch (scene)
 		{
@@ -232,17 +218,31 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 			break;
 
+		case SceneManager::STAGE3:
+
+			//ゲームシーンの描画処理
+			gameScene_3->Draw();
+
+			break;
+
+		case SceneManager::STAGE4:
+
+			//ゲームシーンの描画処理
+			gameScene_4->Draw();
+
+			break;
+
+		case SceneManager::STAGE5:
+
+			//ゲームシーンの描画処理
+			gameScene_5->Draw();
+
+			break;
+
 		case SceneManager::CLEAR:
 
 			//クリアシーンの描画処理
 			clear->Draw();
-
-			break;
-
-		case SceneManager::GAMEOVER:
-
-			//ゲームオーバーシーンの描画処理
-			gameOver->Draw();
 
 			break;
 		}
@@ -271,7 +271,6 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	delete title;
 	delete manual;
 	delete clear;
-	delete gameOver;
 
 	// Dxライブラリ終了処理
 	DxLib_End();

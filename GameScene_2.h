@@ -2,7 +2,8 @@
 #include "Dxlib.h"
 #include "SceneManager.h"
 
-class GameScene_2 {
+class GameScene_2
+{
 private:
 
 	//çÇÇ≥

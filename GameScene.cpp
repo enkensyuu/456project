@@ -327,57 +327,54 @@ void GameScene::Update() {
 					mouse_x > width[5] - radius) &&
 					(mouse_y < height[5] + radius &&
 						mouse_y > height[5] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[1] == 0) {
 
 						height[5] = 100;
 						width[5] = 800;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 1;
+						isBoxFlag[1] = 0;
 					}
 					else if (isSelectFlag[0] == 1) {
 
 						height[5] = 900;
 						width[5] = 800;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 0;
 					}
 				}
 				else if ((mouse_x < width[6] + radius &&
 					mouse_x > width[6] - radius) &&
 					(mouse_y < height[6] + radius &&
 						mouse_y > height[6] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[1] == 0) {
 
 						height[6] = 100;
 						width[6] = 800;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 1;
+						isBoxFlag[1] = 0;
 					}
 					else if (isSelectFlag[0] == 1) {
 
 						height[6] = 900;
 						width[6] = 1000;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 0;
 					}
 				}
 				else if ((mouse_x < width[7] + radius &&
 					mouse_x > width[7] - radius) &&
 					(mouse_y < height[7] + radius &&
 						mouse_y > height[7] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[1] == 0) {
 
 						height[7] = 100;
 						width[7] = 800;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 1;
+						isBoxFlag[1] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[1] == 1) {
 
 						height[7] = 900;
 						width[7] = 1200;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[1] = 0;
 					}
 				}
 			}
@@ -400,7 +397,6 @@ void GameScene::Update() {
 						height[0] = 700;
 						width[0] = 600;
 						isSelectFlag[2] = 0;
-						isBoxFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[1] + radius &&
@@ -439,7 +435,6 @@ void GameScene::Update() {
 						height[2] = 700;
 						width[2] = 1000;
 						isSelectFlag[2] = 0;
-						isBoxFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[3] + radius &&
@@ -458,83 +453,78 @@ void GameScene::Update() {
 						height[3] = 700;
 						width[3] = 1200;
 						isSelectFlag[2] = 0;
-						isBoxFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[4] + radius &&
 					mouse_x > width[4] - radius) &&
 					(mouse_y < height[4] + radius &&
 						mouse_y > height[4] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[2] == 0) {
 
 						height[4] = 100;
 						width[4] = 1000;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 1;
+						isBoxFlag[2] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[2] == 1) {
 
 						height[4] = 900;
 						width[4] = 600;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[5] + radius &&
 					mouse_x > width[5] - radius) &&
 					(mouse_y < height[5] + radius &&
 						mouse_y > height[5] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[2] == 0) {
 
 						height[5] = 100;
 						width[5] = 1000;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 1;
+						isBoxFlag[2] = 0;
 					}
 					else if (isSelectFlag[0] == 1) {
 
 						height[5] = 900;
 						width[5] = 800;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[6] + radius &&
 					mouse_x > width[6] - radius) &&
 					(mouse_y < height[6] + radius &&
 						mouse_y > height[6] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[2] == 0) {
 
 						height[6] = 100;
 						width[6] = 1000;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 1;
+						isBoxFlag[2] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[2] == 1) {
 
 						height[6] = 900;
 						width[6] = 1000;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 0;
 					}
 				}
 				else if ((mouse_x < width[7] + radius &&
 					mouse_x > width[7] - radius) &&
 					(mouse_y < height[7] + radius &&
 						mouse_y > height[7] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[2] == 0) {
 
 						height[7] = 100;
 						width[7] = 1000;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 1;
+						isBoxFlag[2] = 0;
 					}
 					else if (isSelectFlag[0] == 1) {
 
 						height[7] = 900;
 						width[7] = 1200;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[2] = 0;
 					}
 				}
 			}
@@ -557,7 +547,6 @@ void GameScene::Update() {
 						height[0] = 700;
 						width[0] = 600;
 						isSelectFlag[3] = 0;
-						isBoxFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[1] + radius &&
@@ -576,7 +565,6 @@ void GameScene::Update() {
 						height[1] = 700;
 						width[1] = 800;
 						isSelectFlag[3] = 0;
-						isBoxFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[2] + radius &&
@@ -595,7 +583,6 @@ void GameScene::Update() {
 						height[2] = 700;
 						width[2] = 1000;
 						isSelectFlag[3] = 0;
-						isBoxFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[3] + radius &&
@@ -614,46 +601,43 @@ void GameScene::Update() {
 						height[3] = 700;
 						width[3] = 1200;
 						isSelectFlag[3] = 0;
-						isBoxFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[4] + radius &&
 					mouse_x > width[4] - radius) &&
 					(mouse_y < height[4] + radius &&
 						mouse_y > height[4] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[3] == 0) {
 
 						height[4] = 100;
 						width[4] = 1200;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 1;
+						isBoxFlag[3] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[3] == 1) {
 
 						height[4] = 900;
 						width[4] = 600;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[5] + radius &&
 					mouse_x > width[5] - radius) &&
 					(mouse_y < height[5] + radius &&
 						mouse_y > height[5] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[3] == 0) {
 
 						height[5] = 100;
 						width[5] = 1200;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 1;
+						isBoxFlag[3] = 0;
 						isClear4_ = true;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[3] == 1) {
 
 						height[5] = 900;
 						width[5] = 800;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 0;
 						isClear4_ = false;
 					}
 				}
@@ -661,38 +645,36 @@ void GameScene::Update() {
 					mouse_x > width[6] - radius) &&
 					(mouse_y < height[6] + radius &&
 						mouse_y > height[6] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[3] == 0) {
 
 						height[6] = 100;
 						width[6] = 1200;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 1;
+						isBoxFlag[3] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[3] == 1) {
 
 						height[6] = 900;
 						width[6] = 1000;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 0;
 					}
 				}
 				else if ((mouse_x < width[7] + radius &&
 					mouse_x > width[7] - radius) &&
 					(mouse_y < height[7] + radius &&
 						mouse_y > height[7] - radius)) {
-					if (isSelectFlag[0] == 0) {
+					if (isSelectFlag[3] == 0) {
 
 						height[7] = 100;
 						width[7] = 1200;
-						isSelectFlag[0] = 1;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 1;
+						isBoxFlag[3] = 0;
 					}
-					else if (isSelectFlag[0] == 1) {
+					else if (isSelectFlag[3] == 1) {
 
 						height[7] = 900;
 						width[7] = 1200;
-						isSelectFlag[0] = 0;
-						isBoxFlag[0] = 0;
+						isSelectFlag[3] = 0;
 					}
 				}
 			}

@@ -10,8 +10,7 @@ enum class SceneManager
 	STAGE3,
 	STAGE4,
 	STAGE5,
-	CLEAR,
-	GAMEOVER
+	CLEAR
 
 };
 
